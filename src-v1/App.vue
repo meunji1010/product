@@ -2,15 +2,8 @@
   <div class="app">
     <NavBar :categories="categories" @selected="selectedCategory"/> 
     <!-- <List :products="products" @add-to-cart="addToCart"/>  -->
-    <!-- <List :products="filterProducts" @add-to-cart="addToCart"/> 
-    <Cart :cart="cartList" @remove-cart-id="removeCart" @clear-cart="clearCart"/>   -->
-    <router-view 
-      :products="filterProducts"
-      @add-to-cart="addToCart"
-      :cart="cartList"
-      @remove-cart-id="removeCart"
-      @clear-cart="clearCart"
-    />
+    <List :products="filterProducts" @add-to-cart="addToCart"/> 
+    <Cart :cart="cartList" @remove-cart-id="removeCart" @clear-cart="clearCart"/>  
   </div>
 </template>
 

@@ -28,30 +28,30 @@
 </template>
 
 <script setup>
-  import { useRouter } from 'vue-router';
   import OpenModal from './OpenModal.vue';
   import { computed, ref } from 'vue';
   const isOpenModal = ref(false);
-  //라우터 인스턴스 생성
-  const router = useRouter();
   const handleOpen = () => {
     isOpenModal.value = true;
   }
   const closeModal = (value)=>{
     isOpenModal.value = value;
     emit('clear-cart',true);
-    router.push('/');  //상품 목록 페이지로 이동
   }
   const props = defineProps({
     cart : Array
   });
-
   const emit = defineEmits(['remove-cart-id', 'clear-cart']);
   const removeCart = (cartID) => {
     emit( 'remove-cart-id', cartID );
   }
   const totalPrice = computed(()=>{
-
+    // let sum = 0;
+    // props.cart.forEach((item)=>{
+    //   //가격*수량 : 
+    //   sum += item.price * item.count;
+    // });
+    // return sum;
 
     //배열 객체 사용
     let result = props.cart.reduce((sum,item)=>{
