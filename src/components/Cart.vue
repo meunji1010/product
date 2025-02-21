@@ -78,6 +78,10 @@
       border: 1px solid #222;
       border-radius: 5px;
     }
+    img{
+      width: 300px;
+      height: 300px;
+    }
     .cart-list{
       ul{
         li{
